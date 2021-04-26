@@ -68,12 +68,13 @@ the most important feature of this system so it goes first.
 
 I will complete the following tasks to accomplish these goals:
 
-- [ ] List all available pokémon
-- [ ] Provide the `base_experience` for each pokémon
+- [ ] ~~List all available pokémon~~
+  - I will leave this feature for the future so I can move faster right now.
+- [x] Provide the `base_experience` for each pokémon
 - [ ] Check whether a list of pokémon is valid
   - The list should contain only existing pokémon names
   - The list should have more than 0 and less than 6 pokémon
-- [ ] Verify if a trade is valid or not
+- [x] Verify if a trade is valid or not
   - A trade is valid if
     - Both pokémon lists to trade are valid
     - The sum of `base_experience` for both lists are similar
@@ -86,3 +87,8 @@ Once the trade fairness system is working, I will implement the front-end:
 - [ ] Create page to create a pokémon trade
 - [ ] Consume fairness API to indicate whether a pokémon trade is fair or not
 - [ ] Deploy trade fairness system to Heroku
+
+Please note the implementation details:
+
+- There is a helper module called `PokemonInfo` that handles all information
+  related to Pokémon.
