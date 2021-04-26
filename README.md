@@ -41,3 +41,9 @@ To get the server running, execute:
 ```
 rails server -e development
 ```
+
+To run the unit tests:
+
+```
+rails test -e development
+```
