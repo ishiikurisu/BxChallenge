@@ -1,4 +1,14 @@
+require 'poke-api-v2'
+
 module TradeFairness
+  def TradeFairness.get_base_experience pokemon
+    begin
+      PokeApi.get(pokemon: pokemon).base_experience
+    rescue
+      nil
+    end
+  end
+
   def TradeFairness.is_list_valid? list
     return list.length > 0 && list.length <= 6
   end
