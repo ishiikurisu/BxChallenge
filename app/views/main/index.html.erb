@@ -1,0 +1,70 @@
+<div class="content">
+  <h1>Verify Pokémon Trade</h1>
+  <h2>Instructions</h2>
+  <ul>
+    <li>Type the name of the Pokémon you want to trade</li>
+    <li>Click "verify" to check if the trade is fair</li>
+  </ul>
+  <h2>Verify Trade</h2>
+  <form>
+    <table>
+      <tr>
+        <th>Party 1</th>
+        <th>Party 2</th>
+      </tr>
+      <tr> <!-- 1 -->
+        <td><input type="text" id="p-1-1" value=""></td>
+        <td><input type="text" id="p-2-1" value=""></td>
+      </tr>
+      <tr> <!-- 2 -->
+        <td><input type="text" id="p-1-2" value=""></td>
+        <td><input type="text" id="p-2-2" value=""></td>
+      </tr>
+      <tr> <!-- 3 -->
+        <td><input type="text" id="p-1-3" value=""></td>
+        <td><input type="text" id="p-2-3" value=""></td>
+      </tr>
+      <tr> <!-- 4 -->
+        <td><input type="text" id="p-1-4" value=""></td>
+        <td><input type="text" id="p-2-4" value=""></td>
+      </tr>
+      <tr> <!-- 5 -->
+        <td><input type="text" id="p-1-5" value=""></td>
+        <td><input type="text" id="p-2-5" value=""></td>
+      </tr>
+      <tr> <!-- 6 -->
+        <td><input type="text" id="p-1-6" value=""></td>
+        <td><input type="text" id="p-2-6" value=""></td>
+      </tr>
+    </table>
+    <button type="button" id="button" onclick="verify_trade()">Verify</button>
+    <p id="fair-trade-indicator"></p>
+  </form>
+</div>
+
+<script type="text/javascript">
+  function get_party_by_id(pid) {
+    var party = [];
+    for (var i = 1; i <= 6; i++) {
+      var n = document.getElementById(`p-${pid}-${i}`).value;
+      if (n !== "") {
+        party.push(n);
+      }
+    }
+    return party;
+  }
+
+  function verify_trade() {
+    var party1 = get_party_by_id("1");
+    var party2 = get_party_by_id("2");
+    var data = [ party1, party2 ];
+    var request = new XMLHttpRequest();
+
+    request.open('POST', 'https://liberdade-poketrade.herokuapp.com/main/fair', true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    request.onload = function() {
+      console.log(this.response);
+    }
+    request.send(data);
+  }
+</script>
