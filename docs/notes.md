@@ -41,6 +41,8 @@ Regarding technology choice:
   - It offers me the chance to use PostgreSQL basically for free which is really
     good for testing purposes.
 
+## Basic Setup
+
 - [x] Setup Ruby on Rails
   - The [RailsGirls tutorial](http://guides.railsgirls.com/install) and
   this [DigitalOcean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-18-04)
@@ -48,14 +50,36 @@ Regarding technology choice:
 - [x] Setup Heroku
   - The app should be available [here](https://liberdade-poketrade.herokuapp.com)
 
+## Trade Fairness System
+
 Once Rails is up, I will start by implement the trade back-end, this should be
 the most important feature of this system so it goes first.
 
-- [ ] Implement system to verify whether a trade is fair or not
+1. Implement pokémon information system
+  - This should list all available pokémon and display the `base_experience`
+    for each pokémon species
+1. Implement system to verify whether a trade is fair or not
   - This should receive two lists of pokémon;
   - This should return whether the trade is fair or not, or if there is a
     problem with the proposed trade
-- [ ] Implement endpoint to consume the trade fairness system
+1. Implement endpoint to consume the trade fairness system
+  - This endpoint should receive the aforementioned lists and return the
+    desired information
+
+I will complete the following tasks to accomplish these goals:
+
+- [ ] List all available pokémon
+- [ ] Provide the `base_experience` for each pokémon
+- [ ] Check whether a list of pokémon is valid
+  - The list should contain only existing pokémon names
+  - The list should have more than 0 and less than 6 pokémon
+- [ ] Verify if a trade is valid or not
+  - A trade is valid if
+    - Both pokémon lists to trade are valid
+    - The sum of `base_experience` for both lists are similar
+      - In this case, let `A, B` be pokémon lists. I will define similar if
+        `|sum(A)-sum(B)| < 10% (sum(A) + sum(B))` holds.
+- [ ] Create a controller with the pokémon information
 
 Once the trade fairness system is working, I will implement the front-end:
 
