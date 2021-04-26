@@ -8,7 +8,7 @@ gem 'pg'
 gem 'rainbows-rails'
 gem 'unicorn', '~> 5.1'
 gem 'sass-rails', '>= 6'
-gem 'webpacker', '~> 5.0'
+gem 'webpacker', '~> 6.0.0.pre.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
