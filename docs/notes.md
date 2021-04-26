@@ -1,0 +1,60 @@
+# Notes
+
+This document describes the thought process behind the development of this
+repository. It should provide a peek into the reasoning behind the changes code.
+
+Let's get this started! There should be page that allows users to:
+
+- Create a trade
+- Verify if the trade is fair or not
+- Save the trade for future reference
+- See all past trades
+
+The overall development plan should look like this:
+
+1. Implement trade fairness back-end
+  - This should a single endpoint that receives a bunch of pokémon for trade
+    and returns whether the trade is fair or not or if there is a problem with it
+1. Implement history front-end
+  - Includes implement models and methods to store and retrieve trades
+1. Implement trade front-end
+  - This should allow users to create a trade by:
+    - Listing pokémon
+    - Adding pokémon to their side of the trade
+  - After the trade is created, the users should be able to click a
+    "Verify button" and see if the trade is valid or not.
+1. Implement trade history front-end
+  - Once the trade is implemented, there should be a button somewhere allowing
+    users to save their trade.
+  - There should be a list displaying previous trades. Selecting one of these
+    trades would replace the current trade with the selected one.
+
+Regarding technology choice:
+
+- I will use Ruby on Rails because
+  - This project needs to coordinate a front-end with a back-end and Rails is
+    pretty good at that
+  - I need to deploy this to Heroku and Heroku and Rails are best buddies
+  - That's what the company already uses
+- I will use Heroku because
+  - I already know how to use it and so does the company
+  - It offers me the chance to use PostgreSQL basically for free which is really
+    good for testing purposes.
+
+- [ ] Setup Ruby on Rails
+- [ ] Setup Heroku
+
+Once Rails is up, I will start by implement the trade back-end, this should be
+the most important feature of this system so it goes first.
+
+- [ ] Implement system to verify whether a trade is fair or not
+  - This should receive two lists of pokémon;
+  - This should return whether the trade is fair or not, or if there is a
+    problem with the proposed trade
+- [ ] Implement endpoint to consume the trade fairness system
+
+Once the trade fairness system is working, I will implement the front-end:
+
+- [ ] Create page to create a pokémon trade
+- [ ] Consume fairness API to indicate whether a pokémon trade is fair or not
+- [ ] Deploy trade fairness system to Heroku
