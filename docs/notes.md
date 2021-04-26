@@ -41,8 +41,12 @@ Regarding technology choice:
   - It offers me the chance to use PostgreSQL basically for free which is really
     good for testing purposes.
 
-- [ ] Setup Ruby on Rails
-- [ ] Setup Heroku
+- [x] Setup Ruby on Rails
+  - The [RailsGirls tutorial](http://guides.railsgirls.com/install) and
+  this [DigitalOcean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-18-04)
+  may be used to setup Rails
+- [x] Setup Heroku
+  - The app should be available [here](https://liberdade-poketrade.herokuapp.com)
 
 Once Rails is up, I will start by implement the trade back-end, this should be
 the most important feature of this system so it goes first.
