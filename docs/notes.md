@@ -100,5 +100,13 @@ history system. This should store the valid, verified trades in the database
 and display them on the main page.
 
 - [x] Create `Trade` model on database
-- [ ] Create methods to store and retrieve trades
-- [ ] Display trades on front-end
+- [x] Create methods to store and retrieve trades
+- [x] Display trades on front-end
+
+Please note the implementation details:
+
+- The `Trade` model is responsible for storing the data related to each trade.
+  Each trade contains 2 strings, one for each party, listing pokémon separated
+  by comma.
+- Currently the main page is capable of displaying the 5 most
+  recent trades only to keep the document lightweight.
