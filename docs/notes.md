@@ -99,6 +99,6 @@ Now that the fairness system is implemented, it's time to implement the trade
 history system. This should store the valid, verified trades in the database
 and display them on the main page.
 
-- [ ] Create `Trade` model on database
+- [x] Create `Trade` model on database
 - [ ] Create methods to store and retrieve trades
 - [ ] Display trades on front-end
