@@ -38,4 +38,4 @@ development:
 
 production:
   <<: *default
-  # database: db/production.pg
+  pool: 10
